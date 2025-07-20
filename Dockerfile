@@ -1,9 +1,8 @@
+# Use Windows base image
 FROM mcr.microsoft.com/windows/servercore:ltsc2022
 
-RUN powershell -Command `
-    Invoke-WebRequest -Uri https://nodejs.org/dist/v18.17.1/node-v18.17.1-x64.msi -OutFile nodejs.msi ; `
-    Start-Process msiexec.exe -ArgumentList '/qn /i nodejs.msi' -NoNewWindow -Wait ; `
-    Remove-Item -Force nodejs.msi
+# Install Node.js
+RUN powershell -Command "Invoke-WebRequest -Uri https://nodejs.org/dist/v18.17.1/node-v18.17.1-x64.msi -OutFile nodejs.msi; Start-Process msiexec.exe -ArgumentList '/qn /i nodejs.msi' -Wait; Remove-Item -Force nodejs.msi"
 
 WORKDIR /app
 
