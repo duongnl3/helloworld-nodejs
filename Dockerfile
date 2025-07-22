@@ -13,4 +13,4 @@ RUN npm install
 
 EXPOSE 50055
 
-CMD ["node", "server.js"]
+CMD ["npx", "serve", "-p", "50055"]
