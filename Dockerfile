@@ -11,6 +11,6 @@ COPY server.js .
 
 RUN npm install
 
-EXPOSE 50055
+EXPOSE 5000
 
 CMD ["node", "server.js"]
