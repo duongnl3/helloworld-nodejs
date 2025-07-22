@@ -13,4 +13,5 @@ RUN npm install
 
 EXPOSE 50055
 
-CMD ["npx", "serve", "-p", "50055"]
+#CMD ["npx", "serve", "-p", "50055"]
+CMD ["cmd", "/c", "npx serve -p 50055"]
